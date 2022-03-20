@@ -5,8 +5,8 @@ Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 Get-VMNetworkAdapter -VMName <VMName> | Set-VMNetworkAdapter -MacAddressSpoofing On
 
 # 1. First we need to enable the WSL optional feature and Hyper-V and restart the computer
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart  #For Windows 10
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart #For Hyper-V
 Restart-Computer
 
 # 2. Create a folder where the Linux distribution will be placed and executed from
